@@ -1,5 +1,5 @@
 import styles from './Main.module.css'
-import{useRef, useState} from "react"
+import{useEffect, useRef, useState} from "react"
 import Card from '../Card/Card';
 import Popup from '../Popup/Popup';
 
@@ -12,7 +12,17 @@ const Main = () =>{
   
   const onClickBtn = () =>{
     let newVal = inputRef.current.value;
+  let taskArr = [];
    setArr([...arr , newVal])
+   if(localStorage.getItem("task") == null){
+    taskArr.push(inputRef.current.value);
+    localStorage.setItem("task" , JSON.stringify(taskArr))
+}else{
+    let newTask = JSON.parse(localStorage.getItem("task"));
+    newTask.push(inputRef.current.value);
+    console.log("new Task",newTask);
+    localStorage.setItem("task" ,JSON.stringify( newTask));
+}
     inputRef.current.value = "";
     setPop(true); 
     setWord("added to the List")
@@ -21,9 +31,14 @@ const Main = () =>{
   const onClear =() =>{
     setArr([]);
     setWord("all deleted")
-   
-
+  let clear = JSON.parse ( localStorage.getItem("task"))
+   clear = [];
+   localStorage.setItem("task" , JSON.stringify(clear));
   }
+
+//   useEffect(() =>{
+//    localStorage.clear() 
+//   })
 
 
     return (

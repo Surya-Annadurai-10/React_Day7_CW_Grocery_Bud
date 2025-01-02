@@ -10,6 +10,9 @@ const Card = (props) =>{
         console.log(id);
         let newArr = [...props.arr];
       newArr.splice(id , 1);
+     let taskArr = JSON.parse(localStorage.getItem("task"));
+     taskArr.splice(id,1);
+     localStorage.setItem("task",JSON.stringify(taskArr));
         props.setArr(newArr);
         props.setPop(true);
         props.setWord("deleted");
