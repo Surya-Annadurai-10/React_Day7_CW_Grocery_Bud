@@ -1,0 +1,55 @@
+.popupbox {
+  width: 200px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 40%;
+  top: -10%;
+  transition:0.5s cubic-bezier(.6,-0.95,.43,1.93);
+  border-radius: 5px;
+  box-shadow: 0 0 10px grey;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 90%;
+  height: 80%;
+}
+
+.clear {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.inner {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0px;
+  background-color: green;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transition: 5s linear;
+  transition-delay: 0.5s;
+}
+
+.para {
+  color: black;
+}
+
