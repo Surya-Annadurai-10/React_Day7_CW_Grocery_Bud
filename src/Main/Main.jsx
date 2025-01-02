@@ -36,9 +36,7 @@ const Main = () =>{
    localStorage.setItem("task" , JSON.stringify(clear));
   }
 
-//   useEffect(() =>{
-//    localStorage.clear() 
-//   })
+// 
 
 
     return (
